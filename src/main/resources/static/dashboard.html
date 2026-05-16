@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    />
+
+    <title>Lead Management Dashboard</title>
+
+    <link
+        rel="stylesheet"
+        href="css/dashboard.css"
+    />
+</head>
+
+<body>
+
+    <div class="dashboard-container">
+
+        <!-- Header -->
+        <header class="dashboard-header">
+
+            <h1>Lead Management Dashboard</h1>
+
+            <a
+                href="index.html"
+                class="btn-new-lead"
+            >
+                + New Lead
+            </a>
+
+        </header>
+
+        <!-- Dashboard Content -->
+        <div class="dashboard-content">
+
+            <!-- Statistics Cards -->
+            <div class="stats-container">
+
+                <div class="stat-card new-leads">
+                    <div
+                        class="stat-value"
+                        id="newLeadsCount"
+                    >
+                        0
+                    </div>
+
+                    <div class="stat-label">
+                        New Leads
+                    </div>
+                </div>
+
+                <div class="stat-card contacted-leads">
+
+                    <div
+                        class="stat-value"
+                        id="contactedLeadsCount"
+                    >
+                        0
+                    </div>
+
+                    <div class="stat-label">
+                        Contacted
+                    </div>
+                </div>
+
+                <div class="stat-card closed-leads">
+
+                    <div
+                        class="stat-value"
+                        id="closedLeadsCount"
+                    >
+                        0
+                    </div>
+
+                    <div class="stat-label">
+                        Closed
+                    </div>
+                </div>
+
+                <div class="stat-card total-leads">
+
+                    <div
+                        class="stat-value"
+                        id="totalLeadsCount"
+                    >
+                        0
+                    </div>
+
+                    <div class="stat-label">
+                        Total Leads
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Filters Section -->
+            <div class="filters-section">
+
+                <!-- Search -->
+                <div class="search-bar">
+
+                    <input
+                        type="text"
+                        id="searchInput"
+                        placeholder="Search by name, email, or business type..."
+                    />
+
+                    <button
+                        onclick="searchLeads()"
+                        class="btn-search"
+                    >
+                        Search
+                    </button>
+
+                </div>
+
+                <!-- Status Filters -->
+                <div class="filter-buttons">
+
+                    <button
+                        class="filter-btn active"
+                        data-status="ALL"
+                        onclick="filterByStatus('ALL')"
+                    >
+                        All
+                    </button>
+
+                    <button
+                        class="filter-btn"
+                        data-status="NEW"
+                        onclick="filterByStatus('NEW')"
+                    >
+                        New
+                    </button>
+
+                    <button
+                        class="filter-btn"
+                        data-status="CONTACTED"
+                        onclick="filterByStatus('CONTACTED')"
+                    >
+                        Contacted
+                    </button>
+
+                    <button
+                        class="filter-btn"
+                        data-status="CLOSED"
+                        onclick="filterByStatus('CLOSED')"
+                    >
+                        Closed
+                    </button>
+
+                </div>
+
+            </div>
+
+            <!-- Leads Table -->
+            <div class="leads-table-container">
+
+                <table class="leads-table">
+
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Name</th>
+                            <th>Email</th>
+                            <th>Phone</th>
+                            <th>Business Type</th>
+                            <th>Status</th>
+                            <th>Created</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+
+                    <tbody id="leadsTableBody">
+
+                        <tr>
+                            <td
+                                colspan="8"
+                                class="loading-message"
+                            >
+                                Loading leads...
+                            </td>
+                        </tr>
+
+                    </tbody>
+
+                </table>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- Lead Details Modal -->
+    <div
+        id="leadModal"
+        class="modal"
+    >
+
+        <div class="modal-content">
+
+            <span
+                class="close-modal"
+                onclick="closeModal()"
+            >
+                &times;
+            </span>
+
+            <h2>Lead Details</h2>
+
+            <div id="modalBody"></div>
+
+        </div>
+
+    </div>
+
+    <!-- JavaScript -->
+    <script src="js/dashboard.js"></script>
+
+</body>
+</html>

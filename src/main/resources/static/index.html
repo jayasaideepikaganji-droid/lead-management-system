@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    />
+
+    <title>
+        Lead Management - Submit Your Inquiry
+    </title>
+
+    <link
+        rel="stylesheet"
+        href="css/styles.css"
+    />
+</head>
+
+<body>
+
+    <div class="container">
+
+        <!-- Header -->
+        <div class="header">
+
+            <h1>Contact Us</h1>
+
+            <p>
+                We'd love to hear from you.
+                Fill out the form below and
+                we'll get back to you shortly.
+            </p>
+
+        </div>
+
+        <!-- Form Wrapper -->
+        <div class="form-wrapper">
+
+            <form id="leadForm">
+
+                <!-- Full Name -->
+                <div class="form-group">
+
+                    <label for="name">
+                        Full Name
+                        <span class="required">*</span>
+                    </label>
+
+                    <input
+                        type="text"
+                        id="name"
+                        name="name"
+                        placeholder="John Doe"
+                        required
+                    />
+
+                    <span
+                        class="error-message"
+                        id="nameError"
+                    ></span>
+
+                </div>
+
+                <!-- Email -->
+                <div class="form-group">
+
+                    <label for="email">
+                        Email Address
+                        <span class="required">*</span>
+                    </label>
+
+                    <input
+                        type="email"
+                        id="email"
+                        name="email"
+                        placeholder="john@example.com"
+                        required
+                    />
+
+                    <span
+                        class="error-message"
+                        id="emailError"
+                    ></span>
+
+                </div>
+
+                <!-- Phone Number -->
+                <div class="form-group">
+
+                    <label for="phoneNumber">
+                        Phone Number
+                        <span class="required">*</span>
+                    </label>
+
+                    <input
+                        type="tel"
+                        id="phoneNumber"
+                        name="phoneNumber"
+                        placeholder="1234567890"
+                        required
+                    />
+
+                    <span
+                        class="error-message"
+                        id="phoneError"
+                    ></span>
+
+                </div>
+
+                <!-- Business Type -->
+                <div class="form-group">
+
+                    <label for="businessType">
+                        Business Type
+                        <span class="required">*</span>
+                    </label>
+
+                    <select
+                        id="businessType"
+                        name="businessType"
+                        required
+                    >
+
+                        <option value="">
+                            Select your business type
+                        </option>
+
+                        <option value="Retail">
+                            Retail
+                        </option>
+
+                        <option value="Technology">
+                            Technology
+                        </option>
+
+                        <option value="Healthcare">
+                            Healthcare
+                        </option>
+
+                        <option value="Finance">
+                            Finance
+                        </option>
+
+                        <option value="Manufacturing">
+                            Manufacturing
+                        </option>
+
+                        <option value="Real Estate">
+                            Real Estate
+                        </option>
+
+                        <option value="Education">
+                            Education
+                        </option>
+
+                        <option value="Other">
+                            Other
+                        </option>
+
+                    </select>
+
+                    <span
+                        class="error-message"
+                        id="businessTypeError"
+                    ></span>
+
+                </div>
+
+                <!-- Message -->
+                <div class="form-group">
+
+                    <label for="message">
+                        Your Message
+                        <span class="required">*</span>
+                    </label>
+
+                    <textarea
+                        id="message"
+                        name="message"
+                        rows="5"
+                        placeholder="Tell us about your inquiry..."
+                        required
+                    ></textarea>
+
+                    <span
+                        class="error-message"
+                        id="messageError"
+                    ></span>
+
+                </div>
+
+                <!-- Submit Button -->
+                <button
+                    type="submit"
+                    class="btn-submit"
+                    id="submitBtn"
+                >
+
+                    <span class="btn-text">
+                        Submit Inquiry
+                    </span>
+
+                    <span
+                        class="btn-loader"
+                        style="display: none;"
+                    ></span>
+
+                </button>
+
+            </form>
+
+            <!-- Success Message -->
+            <div
+                id="successMessage"
+                class="success-box"
+                style="display: none;"
+            >
+
+                <h3>Thank You!</h3>
+
+                <p>
+                    Your inquiry has been submitted
+                    successfully. We'll get back to
+                    you soon.
+                </p>
+
+            </div>
+
+        </div>
+
+        <!-- Footer -->
+        <div class="footer">
+
+            <a
+                href="dashboard.html"
+                class="dashboard-link"
+            >
+                View Dashboard
+            </a>
+
+        </div>
+
+    </div>
+
+    <!-- JavaScript -->
+    <script src="js/form.js"></script>
+
+</body>
+</html>
